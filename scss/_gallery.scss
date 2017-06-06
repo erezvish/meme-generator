@@ -14,22 +14,20 @@
 
 .img-display {
     background-color: pink;
-    height: 300px; //TODO: Don't forget to remove!    
+    // height: 300px; //TODO: Don't forget to remove!    
     flex-grow: 4;
 }
 
 .thumbnails {
-<<<<<<< HEAD
-    li{
-      img {
-            height: 50px;
-            }
-      }
-=======
     li {
         img {
-            height: 100px;
+            height: em(100px);
+            margin: em(10px);
+            cursor: pointer;
+            transition: border 0.3s;
+            &:hover {
+                border: var(--img-hover-border);
+            }
         }
     }
->>>>>>> 810a4be7f5cf423599e8cfe94311ce9a7b66d0f6
 }

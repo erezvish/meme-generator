@@ -439,7 +439,8 @@ template {
   --main-color: #626262;
   --sections-bg: #f0f0f0;
   --top-nav-bg: #323232;
-  --li-hover: #2ab499; }
+  --li-hover: #2ab499;
+  --img-hover-border: 0.125em solid darkgreen; }
 
 /*----------  Containers  ----------*/
 .container {
@@ -518,15 +519,15 @@ fieldset {
 
 .img-display {
   background-color: pink;
-  height: 300px;
   flex-grow: 4; }
 
 .thumbnails li img {
-<<<<<<< HEAD
-  height: 50px; }
-=======
-  height: 100px; }
->>>>>>> 810a4be7f5cf423599e8cfe94311ce9a7b66d0f6
+  height: 6.25em;
+  margin: 0.625em;
+  cursor: pointer;
+  transition: border 0.3s; }
+  .thumbnails li img:hover {
+    border: var(--img-hover-border); }
 
 .nav-container {
   height: 4.0625em;
