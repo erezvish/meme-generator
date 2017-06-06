@@ -422,21 +422,28 @@ template {
   src: url("../assets/fonts/ubunto/Ubuntu-Light.ttf");
   font-weight: 400; }
 
+/*----------  Lato Font  ----------*/
+@font-face {
+  font-family: 'Lato';
+  src: url("../assets/fonts/Lato/Lato-Regular.ttf");
+  font-weight: 700; }
+
 :root {
   /* Layout */
   --container-width: 1063px;
   --inner-container-width: 900px;
   /* Fonts */
-  --primary-font: Playfair;
+  --primary-font: Lato;
   --secondary-font: Ubuntu;
   /* Colors */
   --main-color: #626262;
   --sections-bg: #f0f0f0;
-  --top-nav-bg: #323232; }
+  --top-nav-bg: #323232;
+  --li-hover: #2ab499; }
 
 /*----------  Containers  ----------*/
 .container {
-  width: var(--container-width);
+  max-width: var(--container-width);
   margin: 0 auto; }
 
 .inner-container {
@@ -492,6 +499,14 @@ fieldset {
   margin: 0; }
 
 /* Components */
+.about {
+  height: 200px;
+  background-color: green; }
+
+.contact {
+  height: 200px;
+  background-color: orange; }
+
 .search-input {
   background-color: yellow;
   text-align: center; }
@@ -509,6 +524,18 @@ fieldset {
 .nav-container {
   height: 4.0625em;
   background-color: var(--top-nav-bg); }
+  .nav-container li a {
+    color: #f1f1f1;
+    text-transform: uppercase;
+    padding: 0 1.5625em;
+    font-family: var(--primary-font);
+    cursor: pointer;
+    transition: color 0.3s; }
+    .nav-container li a:hover {
+      color: var(--li-hover); }
 
-* {
-  border: 1px solid black; }
+.hamburger {
+  font-size: 2rem;
+  cursor: pointer; }
+  .hamburger:hover {
+    color: var(--li-hover); }

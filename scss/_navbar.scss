@@ -1,4 +1,26 @@
 .nav-container {
     height: em(65px);
     background-color: var(--top-nav-bg);
+    li {
+        a{
+             color: #f1f1f1;
+             text-transform: uppercase;
+             padding: 0 em(25px);
+             font-family: var(--primary-font);
+             cursor: pointer;
+             transition: color 0.3s;
+             &:hover {
+                 color:  var(--li-hover);
+             }
+        }
+    }
 }
+
+.hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+    &:hover {
+    color:  var(--li-hover);
+    }
+}
+
