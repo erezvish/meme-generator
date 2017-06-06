@@ -128,6 +128,8 @@ function renderImgs(elImgs, imgs) {
 function imgClicked(elImg) {
     return function () {
         var elImgId = elImg.id.slice(3); //DOM ID starts with 3 letters. Model has only numbers
+        //TODO: grabbing the model img may be an overkill. if only img src needed elImg has it
+        //leaving it for now to see if will be needed later. Remove if not necessary
         var selectedImg = gImgs.find(function (img) {
             return img.id === elImg;
         });
