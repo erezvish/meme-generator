@@ -20,15 +20,20 @@
 
 .img-display {
     background-color: pink;
-    height: 300px; //TODO: Don't forget to remove!    
+    // height: 300px; //TODO: Don't forget to remove!    
     flex-grow: 4;
 }
 
 .thumbnails {
-
     li {
         img {
-            height: 100px;
+            height: em(100px);
+            margin: em(10px);
+            cursor: pointer;
+            transition: border 0.3s;
+            &:hover {
+                border: var(--img-hover-border);
+            }
         }
     }
 }
