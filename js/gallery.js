@@ -106,3 +106,36 @@ var gImgs = [
         keywords: ['Kermit','business','none',]
     }
 ]
+
+var gElImgs;
+
+function initGallery() {
+    gElImgs = document.querySelectorAll('.thumbnails li img') //imgs selector
+    console.log('img selector initgallery', gElImgs);
+    renderImgs(gElImgs,gImgs);
+    
+}
+
+//push X pictures + ids to the HTML placeholders
+function renderImgs(elImgs,imgs) {
+    elImgs.forEach(function(elImg,idx) {
+        elImg.src= gImgs[idx].url;
+    });
+}
+
+function searchBoxClicked (keyWord) {
+    if (keyword) {
+        //filter db by keyword
+    } else {
+        //get value from user-input and filter db (query selector input)
+    }
+    //return currentImgs - imgs that follow the search criteria
+}
+
+function imgClicked (elImg) {
+    var elImgId = elImg.id;
+    var selectedImg = gImgs.find(function (img) {
+        return img.id === elImg;
+    });
+    initEditor(selectedImg); //draw canvas with selected img and render editor
+}
