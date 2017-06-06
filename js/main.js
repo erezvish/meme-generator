@@ -10,10 +10,10 @@ var gState = {
     selectedImgId: null,
     txts: [
         {
-            text: 'I never eat Falafel',
-            size: 4,
-            align: 'left',
-            color: 'red'
+            text: null,
+            fontSize: 4,
+            txtAlign: 'center',
+            fontColor: 'gold'
         }]
 }
 
