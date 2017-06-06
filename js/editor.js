@@ -1,7 +1,7 @@
 'use strict';
 console.log('editor js is up!');
 
-var gEditorEls;
+var gEditorEls = {};
 
 var gEditorBttns = [
     {
@@ -54,7 +54,7 @@ function renderCanvas(url) {
 
     var img = new Image();
     // img.src = "images/koala.jpg";
-    img.src = "url";
+    img.src = url;
 
 
     // img.onload = function () {
