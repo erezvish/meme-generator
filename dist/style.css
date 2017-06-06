@@ -522,7 +522,11 @@ fieldset {
   flex-grow: 4; }
 
 .thumbnails li img {
+<<<<<<< HEAD
   height: 50px; }
+=======
+  height: 100px; }
+>>>>>>> 810a4be7f5cf423599e8cfe94311ce9a7b66d0f6
 
 .nav-container {
   height: 4.0625em;
