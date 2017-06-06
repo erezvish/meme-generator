@@ -1,6 +1,7 @@
 'use strict';
 console.log('editor js is up!');
 
+var INITIAL_TEXTS_NUM = 2;
 var gEditorEls = {};
 
 var gEditorBttns = [
@@ -45,7 +46,7 @@ var gEditorBttns = [
 function initEditor() {
     gEditorEls.toolBoxArea = document.querySelector('.meme-toolbox');
     renderCanvas(null);
-    renderEditor();
+    renderEditor(INITIAL_TEXTS_NUM);
 }
 
 function renderCanvas(url) {
@@ -65,39 +66,55 @@ function renderCanvas(url) {
     });
 }
 
-function renderEditor() {
-    //render the back button
-    //call render text or something like that and append to location in the dom - that's how we will add more texts
+function renderEditor(textsNum) {
+    var strHTML = `<form>
+    <div> 
+    <div class="button"> <button type="button">Return to image selection</button> </div>`;
+    for (var i = 0; i < textsNum; i++) {
+        strHTML += '<div>' + getToolBoxHTML(textsNum, i) + '</div>';
+    }
+    strHTML += '</div> </form>';
+    gEditorEls.toolBoxArea.innerHTML = strHTML;
 }
 
-function alignBttnClicked (elBttn) {
+function getToolBoxHTML(id) {
+    var inputHTML = ` <div> <input type="text" id="text${id}" placeholder="input your text"> </div>
+                    <div class="tool-buttons">`;
+    var bttnsHTML = gEditorBttns.map(function (gBttn, ) {
+        return `<button type="button" 
+        onclick="${gBttn.onclick}">${gBttn.glyph}</button>`;
+    });
+    return `${inputHTML} ${bttnsHTML.join('')} </div>`;
+}
+
+function alignBttnClicked(elBttn) {
     //remove all other alignment classes and add the correct class
 }
 
-function fontSizeBttnClicked (elBttn) {
+function fontSizeBttnClicked(elBttn) {
     //increase or decrease font size based on value. TODO: Determine how to get selected text
 }
 
-function changeFontBttnClicked (elBttn) {
+function changeFontBttnClicked(elBttn) {
     //See above TODO
 }
 
-function toggleBorderBttnClicked (elBttn) {
+function toggleBorderBttnClicked(elBttn) {
 
 }
 
-function changeColorBttnClicked (elBttn) {
+function changeColorBttnClicked(elBttn) {
 
 }
 
-function addTextBttnClicked (elBttn) {
+function addTextBttnClicked(elBttn) {
 
 }
 
-function delTextBttnClicked (elBttn) {
+function delTextBttnClicked(elBttn) {
 
 }
 
-function searchBttnClicked (elBttn) {
+function searchBttnClicked(elBttn) {
 
 }
