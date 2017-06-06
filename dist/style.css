@@ -509,7 +509,7 @@ fieldset {
   background-color: orange; }
 
 .gallery {
-  display: none; }
+  display: block; }
 
 .meme-editor {
   display: block; }
@@ -528,16 +528,12 @@ fieldset {
   flex-grow: 4; }
 
 .thumbnails li img {
-<<<<<<< HEAD
-  height: 100px; }
-=======
   height: 6.25em;
   margin: 0.625em;
   cursor: pointer;
   transition: border 0.3s; }
   .thumbnails li img:hover {
     border: var(--img-hover-border); }
->>>>>>> f47cb5cf7e40492fc849f4159e5bcc086a87660f
 
 .nav-container {
   height: 4.0625em;

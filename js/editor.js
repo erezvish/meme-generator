@@ -4,6 +4,8 @@ console.log('editor js is up!');
 function initEditor(selectedImg) {
     //init globals
     renderCanvas(selectedImg.url);
+    console.log('selectedImg.url', selectedImg.url);
+    
     // renderEditor();
 }
 
@@ -12,7 +14,7 @@ function initEditor(selectedImg) {
             var context = canvas.getContext('2d');
 
             var img = new Image();
-            // img.src = "images/koala.jpg";
+            // img.src = "assets/imgs/galleryImgs/1.jpg";
             img.src = "url";
             
 
@@ -23,3 +25,8 @@ function initEditor(selectedImg) {
                 context.renderCanvas(img, 0, 0, 400, 360);
             });
    }
+
+    
+
+
+        
