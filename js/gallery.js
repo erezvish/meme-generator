@@ -139,3 +139,5 @@ function imgClicked (elImg) {
     });
     initEditor(selectedImg); //draw canvas with selected img and render editor
 }
+
+
