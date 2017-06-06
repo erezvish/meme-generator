@@ -1,17 +1,49 @@
 'use strict';
 console.log('editor js is up!');
 
-var gEditorTools = [
-    {
-        type: null,
-        glyph: null,
-        onclick: null,
+var gEditorEls;  
 
+var gEditorBttns = [
+    {
+        glyph: '<i class="fa fa-align-right"></i>',
+        onclick: null,
+    },
+    {
+        glyph: '<i class="fa fa-align-center"></i>',
+        onclick: null,
+    },
+    {
+        glyph: '<i class="fa fa-align-left"></i>',
+        onclick: null,
+    },
+    {
+        glyph: '<i class="fa fa-minus"></i>',
+        onclick: null,
+    },
+    {
+        glyph: '<i class="fa fa-plus"></i>',
+        onclick: null,
+    },
+    {
+        glyph: '<i class="fa fa-tint"></i>',
+        onclick: null,
+    },
+    {
+        glyph: 'S',
+        onclick: null,
+    },
+    {
+        glyph: 'A',
+        onclick: null,
+    },
+    {
+        glyph: '<i class="fa fa-trash-o"></i>',
+        onclick: null,
     }
-]
+];
 
 function initEditor(selectedImg) {
-    //init globals selectors
+    gEditorEls.toolBoxArea = document.querySelector('meme-toolbox');
     renderCanvas(selectedImg.url);
     renderEditor();
 }
