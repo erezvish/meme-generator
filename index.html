@@ -3,17 +3,51 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Coding Academy</title>
+  <title>Meme Generator</title>
   <link rel="stylesheet" href="dist/style.css">
 </head>
 
- <body>
-    <div class="container">
-      <h1>Coding Academy</h1>   
-      <h2>Basic HTML+SCSS Starter</h2>
+<body>
+  <main class="container">
+    <header>
+      <nav class="navbar">
+        <div class="nav-container flex justify-center">
+          <div class="logo">LOGO!</div>
+          <!--TODO: Fix location of logo-->
+          <ul class="clean-list">
+            <li>&#x2630;</li>
+          </ul>
+          <div class="main-nav-items flex justify-center">
+            <ul class="clean-list flex">
+              <li><a href="#main-display">Portfolio</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#"></a>Placeholder Arrow</li>
+              <li><a href="#"></a>Blog</li>
+              <li><a href="#"></a>Get in Touch!</li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-    </div>
-    <script src="js/main.js"></script>
- </body>
+    <section class="gallery">
+      <div class="search-box flex">
+        <input type="text" class="search-input flex-1" name="search-input" placeholder="Enter Keyword">
+        <button class="search-button">&#x1f50d;</button>
+      </div>
+      <div class="responsive-gallery flex">
+        <div class="tags-display"></div>
+        <div class="img-display"></div>
+      </div>
+    </section>
+
+    <section class="about"></section>
+    <section class="contact"></section>
+
+  </main>
+
+  <script src="js/editor.js"></script>
+  <script src="js/main.js"></script>
+</body>
 
 </html>
