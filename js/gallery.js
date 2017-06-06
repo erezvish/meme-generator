@@ -127,12 +127,12 @@ function renderImgs(elImgs, imgs) {
 }
 function imgClicked(elImg) {
     return function () {
-        var elImgId = elImg.id;
+        var elImgId = elImg.id.slice(3); //DOM ID starts with 3 letters. Model has only numbers
         var selectedImg = gImgs.find(function (img) {
             return img.id === elImg;
         });
         initEditor(selectedImg); //draw canvas with selected img and render editor
-        // console.log('img clicked:', elImg.src);
+        console.log('img clicked:', elImg.src);
     }
 }
 
