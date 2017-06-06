@@ -521,6 +521,9 @@ fieldset {
   height: 300px;
   flex-grow: 4; }
 
+.thumbnails li img {
+  height: 100px; }
+
 .nav-container {
   height: 4.0625em;
   background-color: var(--top-nav-bg); }
