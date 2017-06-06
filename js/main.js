@@ -19,4 +19,5 @@ var gState = {
 
 function initApp(){
     initGallery();
+    initEditor();
 }

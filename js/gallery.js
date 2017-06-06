@@ -133,7 +133,7 @@ function imgClicked(elImg) {
         var selectedImg = gImgs.find(function (img) {
             return img.id === elImg;
         });
-        initEditor(selectedImg); //draw canvas with selected img and render editor
+        renderCanvas(selectedImg.url); //draw canvas with selected img and render editor
         console.log('img clicked:', elImg.src);
     }
 }

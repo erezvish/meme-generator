@@ -1,7 +1,7 @@
 'use strict';
 console.log('editor js is up!');
 
-var gEditorEls;  
+var gEditorEls;
 
 var gEditorBttns = [
     {
@@ -42,9 +42,9 @@ var gEditorBttns = [
     }
 ];
 
-function initEditor(selectedImg) {
-    gEditorEls.toolBoxArea = document.querySelector('meme-toolbox');
-    renderCanvas(selectedImg.url);
+function initEditor() {
+    gEditorEls.toolBoxArea = document.querySelector('.meme-toolbox');
+    renderCanvas(null);
     renderEditor();
 }
 
