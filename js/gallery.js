@@ -1,11 +1,5 @@
 'use strict';
 
-
-// var gImgs = [
-//     { id: img1, url: 'img/popo.jpg', keywords: ['happy'] },
-//     { id: img2, url: 'img/popo.jpg', keywords: ['happy'] }
-// ]
-
 var gImgs = [
     {
         id: 0,
@@ -120,7 +114,7 @@ function initGallery() {
 function renderImgs(elImgs, imgs) {
     clearElImgs(elImgs);
     elImgs.forEach(function (elImg, idx) {
-        if (imgs[idx].url) {
+        if (imgs[idx]) {
             elImg.src = imgs[idx].url;
             elImg.id = 'img' + imgs[idx].id;
             elImg.onclick = imgClicked(elImg);
@@ -150,21 +144,11 @@ function imgClicked(elImg) {
     }
 }
 
-function searchBoxClicked(keyWord) {
-    if (keyword) {
-        //filter db by keyword
-    } else {
-        //get value from user-input and filter db (query selector input)
-    }
-    //return currentImgs - imgs that follow the search criteria
-}
-
-function searchBttnClicked(keyWord) { //TODO: filter uniques from the result
+function searchActivated(keyWord) { //TODO: filter uniques from the result
     if (keyWord) {
         console.log('I am called from tag search');
     } else {
-
-        if (!gEditorEls.searchInput.value) renderImgs(gElImgs, filteredImgs);
+        if (!gEditorEls.searchInput.value) renderImgs(gElImgs, gImgs);
         else {
             var userKeyWords = gEditorEls.searchInput.value.split(' ');
 
