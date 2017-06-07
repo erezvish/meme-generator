@@ -79,9 +79,10 @@ function getToolBoxHTML(id) {
 }
 
 function textInserted(elTxtInput) {
-    debugger;
+    console.log(elTxtInput);
     var txtId = +elTxtInput.id.slice(3); //text Id preceded by 3 letters;
-    // console.log('captured text number:', txtId);
+    console.log('captured text:', gState.txts[txtId]);
+    debugger;
     gState.txts[txtId].txt = elTxtInput.value;
     renderCanvasTxt();
 }

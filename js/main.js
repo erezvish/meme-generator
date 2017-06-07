@@ -2,7 +2,7 @@
 console.log('main js is running');
 var INITIAL_TXTS_NUM = 2;
 var TXT_DEFAULTS = {
-    txt: null,
+    txt: '',
     fontDefSize: '14px',
     txtAlign: 'center',
     fontColor: 'White',
@@ -34,5 +34,6 @@ function getInitialState() {
         currTxt.isBorder = TXT_DEFAULTS.isBorder;
         currTxt.fontCurrFamily = TXT_DEFAULTS.fontsDefFamily;
         gState.txts.push(currTxt);
+        currTxt = {};
     }
 }
