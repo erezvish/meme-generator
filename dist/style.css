@@ -511,9 +511,6 @@ fieldset {
 .gallery {
   display: block; }
 
-.meme-editor {
-  display: block; }
-
 .search-input {
   background-color: yellow;
   text-align: center; }
@@ -553,3 +550,7 @@ fieldset {
   cursor: pointer; }
   .hamburger:hover {
     color: var(--li-hover); }
+
+.meme-canvas {
+  background-color: lightgray;
+  border: 1px solid black; }
