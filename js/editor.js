@@ -1,48 +1,52 @@
 'use strict';
 console.log('editor js is up!');
 
+var LIMITS = {
+    minFontSize: 6
+};
+
 var gEditorEls = {};
 
 var gEditorBttns = [
     {
         glyph: '<i class="fa fa-trash-o"></i>',
         onclick: 'delTextBttnClicked(elBttn)',
-        dataAttribute: null        
+        dataAttribute: null
     },
     {
         glyph: 'A',
         onclick: 'changeFontBttnClicked(this)',
-        dataAttribute: null        
+        dataAttribute: null
     },
     {
         glyph: 'S',
         onclick: 'toggleBorderBttnClicked(elBttn)',
-        dataAttribute: null        
+        dataAttribute: null
     },
     {
         glyph: '<i class="fa fa-tint"></i>',
         onclick: 'changeColorBttnClicked(elBttn)',
-        dataAttribute: null        
+        dataAttribute: null
     },
     {
         glyph: '<i class="fa fa-plus"></i>',
         onclick: 'fontSizeBttnClicked(this)',
-        dataAttribute: 'add'        
+        dataAttribute: 'add'
     },
     {
         glyph: '<i class="fa fa-minus"></i>',
         onclick: 'fontSizeBttnClicked(this)',
-        dataAttribute: 'decrement'         
+        dataAttribute: 'decrement'
     },
     {
         glyph: '<i class="fa fa-align-left"></i>',
         onclick: 'alignBttnClicked(this)',
-        dataAttribute: 'left'        
+        dataAttribute: 'left'
     },
     {
         glyph: '<i class="fa fa-align-center"></i>',
         onclick: 'alignBttnClicked(this)',
-        dataAttribute: 'center'        
+        dataAttribute: 'center'
     },
     {
         glyph: '<i class="fa fa-align-right"></i>',
@@ -73,35 +77,45 @@ function getToolBoxHTML(id) {
                     <div class="tool-buttons">`;
     var bttnsHTML = gEditorBttns.map(function (gBttn, ) {
         return `<button type="button" 
-        onclick="${gBttn.onclick}" data-special="${gBttn.dataAttribute}">${gBttn.glyph}</button>`;
+        onclick="${gBttn.onclick}" data-special="${gBttn.dataAttribute}" data-txt-num="${id}">${gBttn.glyph}</button>`;
     });
     return `${inputHTML} ${bttnsHTML.join('')} </div>`;
 }
 
 function textInserted(elTxtInput) {
-    console.log(elTxtInput);
+    // console.log(elTxtInput);
     var txtId = +elTxtInput.id.slice(3); //text Id preceded by 3 letters;
     // console.log('captured text:', gState.txts[txtId]);
     gState.txts[txtId].txt = elTxtInput.value;
     renderCanvasTxt();
 }
 
-function alignBttnClicked(elBttn, direction) {
-    //find the element based on the button clicked
-    //remove all other alignment classes and add the correct class
-    console.log(elBttn, 'clicked! direction:');
+function alignBttnClicked(elBttn) {
+    var txtId = elBttn.getAttribute('data-txt-num');
+    var requiredAlignment = elBttn.getAttribute('data-special')
+
+    gState.txts[txtId].txtAlign = requiredAlignment;
+    renderCanvasTxt();
 }
 
 function fontSizeBttnClicked(elBttn) {
-    //increase or decrease font size based on value. TODO: Determine how to get selected text
+    var txtId = elBttn.getAttribute('data-txt-num');
+    var requiredChange = elBttn.getAttribute('data-special');
+
+    if (requiredChange === 'add') gState.txts[txtId].fontCurrSize++;
+    else gState.txts[txtId].fontCurrSize--; 
+    if (gState.txts[txtId].fontCurrSize < LIMITS.minFontSize)  gState.txts[txtId].fontCurrSize = LIMITS.minFontSize;
+    renderCanvasTxt();
 }
 
 function changeFontBttnClicked(elBttn) {
-    //See above TODO
+
 }
 
 function toggleBorderBttnClicked(elBttn) {
-
+    var txtId = elBttn.getAttribute('data-txt-num');
+    var isBorder = elBttn.getAttribute('data-special');
+    gState.txts[txtId].isBorder = isBorder;
 }
 
 function changeColorBttnClicked(elBttn) {

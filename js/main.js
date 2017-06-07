@@ -3,7 +3,7 @@ console.log('main js is running');
 var INITIAL_TXTS_NUM = 2;
 var TXT_DEFAULTS = {
     txt: '',
-    fontDefSize: '14px',
+    fontDefSize: 14,
     txtAlign: 'center',
     fontColor: 'White',
     isBorder: true,
