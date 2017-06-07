@@ -10,7 +10,7 @@ var gEditorEls = {};
 var gEditorBttns = [
     {
         glyph: '<i class="fa fa-trash-o"></i>',
-        onclick: 'delTextBttnClicked(elBttn)',
+        onclick: 'delTextBttnClicked(this)',
         dataAttribute: null
     },
     {
@@ -20,12 +20,12 @@ var gEditorBttns = [
     },
     {
         glyph: 'S',
-        onclick: 'toggleBorderBttnClicked(elBttn)',
+        onclick: 'toggleBorderBttnClicked(this)',
         dataAttribute: null
     },
     {
         glyph: '<i class="fa fa-tint"></i>',
-        onclick: 'changeColorBttnClicked(elBttn)',
+        onclick: 'changeColorBttnClicked(this)',
         dataAttribute: null
     },
     {
@@ -57,6 +57,7 @@ var gEditorBttns = [
 
 function initEditor() {
     gEditorEls.toolBoxArea = document.querySelector('.meme-toolbox');
+    gEditorEls.searchInput = document.querySelector('.search-input');
     renderCanvas(null);
     renderEditor(INITIAL_TXTS_NUM);
 }
@@ -103,8 +104,8 @@ function fontSizeBttnClicked(elBttn) {
     var requiredChange = elBttn.getAttribute('data-special');
 
     if (requiredChange === 'add') gState.txts[txtId].fontCurrSize++;
-    else gState.txts[txtId].fontCurrSize--; 
-    if (gState.txts[txtId].fontCurrSize < LIMITS.minFontSize)  gState.txts[txtId].fontCurrSize = LIMITS.minFontSize;
+    else gState.txts[txtId].fontCurrSize--;
+    if (gState.txts[txtId].fontCurrSize < LIMITS.minFontSize) gState.txts[txtId].fontCurrSize = LIMITS.minFontSize;
     renderCanvasTxt();
 }
 
@@ -114,8 +115,7 @@ function changeFontBttnClicked(elBttn) {
 
 function toggleBorderBttnClicked(elBttn) {
     var txtId = elBttn.getAttribute('data-txt-num');
-    var isBorder = elBttn.getAttribute('data-special');
-    gState.txts[txtId].isBorder = isBorder;
+    gState.txts[txtId].isBorder = !gState.txts[txtId].isBorder;
 }
 
 function changeColorBttnClicked(elBttn) {
@@ -130,6 +130,19 @@ function delTextBttnClicked(elBttn) {
 
 }
 
-function searchBttnClicked(elBttn) {
+function searchBttnClicked() {
+    if (!gEditorEls.searchInput.value) return;
 
+    var userKeyWords = gEditorEls.searchInput.value.split(' ');
+
+    var filteredImgs = [];
+    userKeyWords.forEach(function (userKeyWord) {
+        var currFilteredImgs = gImgs.filter(function (gImg) {
+            return gImg.keyWords.some(function (keyWord) {
+                return userKeyWord === keyWord
+            });
+        });
+        filteredImgs = filteredImgs.concat(currFilteredImgs);
+    });
+    console.log(filteredImgs);
 }
