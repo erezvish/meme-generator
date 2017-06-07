@@ -1,7 +1,6 @@
 'use strict';
 console.log('editor js is up!');
 
-var INITIAL_TEXTS_NUM = 2;
 var gEditorEls = {};
 
 var gEditorBttns = [
@@ -55,22 +54,22 @@ var gEditorBttns = [
 function initEditor() {
     gEditorEls.toolBoxArea = document.querySelector('.meme-toolbox');
     renderCanvas(null);
-    renderEditor(INITIAL_TEXTS_NUM);
+    renderEditor(INITIAL_TXTS_NUM);
 }
 
 function renderEditor(textsNum) {
     var strHTML = `<form>
     <div> 
-    <div class="button"> <button type="button">Return to image selection</button> </div>`;
+    <div class="bttn-return"> <button type="button">Return to image selection</button> </div>`;
     for (var i = 0; i < textsNum; i++) {
-        strHTML += '<div>' + getToolBoxHTML(textsNum, i) + '</div>';
+        strHTML += '<div>' + getToolBoxHTML(i) + '</div>';
     }
     strHTML += '</div> </form>';
     gEditorEls.toolBoxArea.innerHTML = strHTML;
 }
 
 function getToolBoxHTML(id) {
-    var inputHTML = ` <div> <input type="text" id="text${id}" placeholder="input your text"> </div>
+    var inputHTML = ` <div> <input type="text" id="txt${id}" onkeyup="textInserted(this)" placeholder="input your text"> </div>
                     <div class="tool-buttons">`;
     var bttnsHTML = gEditorBttns.map(function (gBttn, ) {
         return `<button type="button" 
@@ -79,10 +78,17 @@ function getToolBoxHTML(id) {
     return `${inputHTML} ${bttnsHTML.join('')} </div>`;
 }
 
+function textInserted(elTxtInput) {
+    var txtId = +elTxtInput.id.slice(3); //text Id preceded by 3 letters;
+    // console.log('captured text number:', txtId);
+    gState.txts[txtId] = elTxtInput.value;
+    renderCanvasTxt();
+}
+
 function alignBttnClicked(elBttn, direction) {
     //find the element based on the button clicked
     //remove all other alignment classes and add the correct class
-    console.log(elBttn, 'clicked! direction:', direction);
+    console.log(elBttn, 'clicked! direction:');
 }
 
 function fontSizeBttnClicked(elBttn) {

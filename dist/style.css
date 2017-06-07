@@ -556,6 +556,7 @@ fieldset {
   border: 1px solid black; }
 
 .meme-toolbox button {
+  cursor: pointer;
   transition: color 0.3s; }
   .meme-toolbox button:hover {
     color: green; }
