@@ -554,3 +554,8 @@ fieldset {
 .meme-canvas {
   background-color: lightgray;
   border: 1px solid black; }
+
+.meme-toolbox button {
+  transition: color 0.3s; }
+  .meme-toolbox button:hover {
+    color: green; }
