@@ -13,14 +13,14 @@ var gImgs = [
         title: 'What if I told you',
         desc: '',
         url: 'assets/imgs/galleryImgs/2.jpg',
-        keyWords: ['What if', 'told you', 'matrix', 'morpheus'],
+        keyWords: ['What', 'if', 'told', 'you', 'matrix', 'morpheus'],
     },
     {
         id: 2,
         title: 'I double dare you',
         desc: '',
         url: 'assets/imgs/galleryImgs/3.jpg',
-        keyWords: ['I dare you', 'pulp fiction'],
+        keyWords: ['dare', 'you', 'pulp', 'fiction'],
     },
     {
         id: 3,
@@ -41,7 +41,7 @@ var gImgs = [
         title: 'Buzz & Woody',
         desc: '',
         url: 'assets/imgs/galleryImgs/6.jpg',
-        keyWords: ['toy story', 'buzz', 'woody', 'everywher'],
+        keyWords: ['toy', 'story', 'buzz', 'woody', 'everywhere'],
     },
     {
         id: 6,
@@ -69,28 +69,28 @@ var gImgs = [
         title: 'Look at all the fucks I give',
         desc: '',
         url: 'assets/imgs/galleryImgs/10.jpg',
-        keyWords: ['fuck', 'sounds of music', 'maria', 'fucks'],
+        keyWords: ['fuck', 'sounds', 'music', 'maria', 'fucks'],
     },
     {
         id: 10,
         title: 'Close Enough',
         desc: '',
         url: 'assets/imgs/galleryImgs/11.jpg',
-        keyWords: ['close enough', 'close', 'enough', 'frustrated'],
+        keyWords: ['close', 'enough', 'close', 'enough', 'frustrated'],
     },
     {
         id: 11,
         title: 'WTF',
         desc: '',
         url: 'assets/imgs/galleryImgs/12.jpg',
-        keyWords: ['Jackie Chan', 'fuck', 'what',],
+        keyWords: ['Jackie', 'Chan', 'fuck', 'what',],
     },
     {
         id: 12,
         title: 'I don\'t think it means what you think it means',
         desc: '',
         url: 'assets/imgs/galleryImgs/13.jpg',
-        keyWords: ['Inigo Montoya', 'think', 'means', 'princess bride'],
+        keyWords: ['Inigo', 'Montoya', 'think', 'means', 'princess', 'bride'],
     },
     {
         id: 13,
@@ -156,12 +156,13 @@ function searchActivated(keyWord) { //TODO: filter uniques from the result
             userKeyWords.forEach(function (userKeyWord) {
                 var currFilteredImgs = gImgs.filter(function (gImg) {
                     return gImg.keyWords.some(function (keyWord) {
-                        return userKeyWord === keyWord
+                        debugger;
+                        return userKeyWord.toUpperCase() === keyWord.toUpperCase();
                     });
                 });
                 filteredImgs = filteredImgs.concat(currFilteredImgs);
             });
-            console.log(filteredImgs);
+            // console.log(filteredImgs);
             renderImgs(gElImgs, filteredImgs);
         }
     }

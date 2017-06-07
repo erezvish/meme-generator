@@ -432,6 +432,7 @@ template {
   /* Layout */
   --container-width: 1063px;
   --inner-container-width: 900px;
+  --about-height: 340px;
   /* Fonts */
   --primary-font: Lato;
   --secondary-font: Ubuntu;
@@ -439,6 +440,8 @@ template {
   --main-color: #626262;
   --sections-bg: #f0f0f0;
   --top-nav-bg: #323232;
+  --about-bg: #2eb398;
+  --contact-bg: #323232;
   --li-hover: #2ab499;
   --img-hover-border: 0.125em solid darkgreen; }
 
@@ -460,6 +463,9 @@ template {
 
 .align-center {
   align-items: center; }
+
+.align-sart {
+  align-items: flex-start; }
 
 .justify-center {
   justify-content: center; }
@@ -507,12 +513,16 @@ fieldset {
 
 /* Components */
 .about {
-  height: 200px;
-  background-color: green; }
+  background-color: var(--about-bg);
+  padding: 4.375em 0.625em; }
+  .about img {
+    padding: 0em 0.625em; }
+  .about h1, .about h2, .about h3 {
+    margin: 0.25em; }
 
 .contact {
   height: 200px;
-  background-color: orange; }
+  background-color: #323232; }
 
 .gallery {
   display: block; }
@@ -527,7 +537,6 @@ fieldset {
   flex-grow: 1; }
 
 .img-display {
-  background-color: pink;
   flex-grow: 4; }
 
 .thumbnails li img {

@@ -1,4 +1,13 @@
 .about { //TDOD: don't forget to delete
-    height: 200px;
-    background-color: green;
+    background-color: var(--about-bg);
+    padding: em(70px) em(10px);
+
+    img {
+        padding: em(0px) em(10px);
+    }
+
+    h1, h2, h3 {
+        margin: em(4px);
+    }
+    
 }
