@@ -14,7 +14,6 @@ function renderCanvas() {
     });
 }
 
-
 // function renderCanvasTxt() {
 //     var canvas = document.querySelector('.txt-canvas');
 //     var context = canvas.getContext('2d');

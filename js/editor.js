@@ -63,7 +63,6 @@ function initEditor() {
 }
 
 function renderEditor(textsNum) { //TODO: function can take number of txts from gstate.txts.length
-    debugger;
     var strHTML = `<form>
     <div> 
     <div class="bttn-return"> <button type="button">Return to image selection</button> </div>`;
