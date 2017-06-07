@@ -13,7 +13,6 @@ function renderCanvas(url) {
 
 
  function renderCanvasTxt() {
-     debugger;
             var canvas = document.querySelector('.txt-canvas');
             var context = canvas.getContext('2d');
 
