@@ -11,6 +11,7 @@
 
 .meme-toolbox {
     button {
+        cursor: pointer;
         transition: color 0.3s;
         &:hover {
             color: green;
