@@ -553,3 +553,8 @@ fieldset {
   cursor: pointer; }
   .hamburger:hover {
     color: var(--li-hover); }
+
+.meme-toolbox button {
+  transition: color 0.3s; }
+  .meme-toolbox button:hover {
+    color: green; }
