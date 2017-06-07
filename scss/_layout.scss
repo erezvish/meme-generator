@@ -25,6 +25,10 @@
   display: flex;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .align-center {
   align-items: center;
 }
@@ -55,6 +59,10 @@
 
 .flex-1 {
   flex: 1;
+}
+
+.flex-stretch {
+  align-items: stretch;
 }
 /* General Helpers*/
 

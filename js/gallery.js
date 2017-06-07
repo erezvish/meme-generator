@@ -14,17 +14,17 @@ var gImgs = [
         url: 'assets/imgs/galleryImgs/1.jpg',
         keyWords: ['bad', 'luck', 'brian'],
     },
-     {
-         id: 2,
-         title: 'What if I told you',
-         desc: '',
-         url: 'assets/imgs/galleryImgs/2.jpg',
-         keyWords: ['What if', 'told you', 'matrix', 'morpheus'],
-     },
-     {
-         id: 3,
-         title: 'I double dare you',
-         desc: '',
+    {
+        id: 2,
+        title: 'What if I told you',
+        desc: '',
+        url: 'assets/imgs/galleryImgs/2.jpg',
+        keyWords: ['What if', 'told you', 'matrix', 'morpheus'],
+    },
+    {
+        id: 3,
+        title: 'I double dare you',
+        desc: '',
         url: 'assets/imgs/galleryImgs/3.jpg',
         keyWords: ['I dare you', 'pulp fiction'],
     },
@@ -116,15 +116,25 @@ function initGallery() {
 
 }
 
-//push X pictures + ids to the HTML placeholders
 //TODO: currently only the first 6 images are rendered. The rest are ignored. Change!
 function renderImgs(elImgs, imgs) {
+    clearImgs(elImgs);
     elImgs.forEach(function (elImg, idx) {
-        elImg.src = gImgs[idx].url;
-        elImg.id = 'img' + gImgs[idx].id;
+        if (!imgs[idx].id) return;
+        elImg.src = imgs[idx].url;
+        elImg.id = 'img' + imgs[idx].id;
         elImg.onclick = imgClicked(elImg);
     });
 }
+
+function clearImgs(elImgs) {
+    elImgs.forEach(function (elImg) {
+        elImg.src = '';
+        elImg.id = '';
+        elImg.onclick = '';
+    });
+}
+
 function imgClicked(elImg) {
     return function () {
         var elImgId = +elImg.id.slice(3); //DOM ID starts with 3 letters. Model has only numbers
@@ -145,6 +155,30 @@ function searchBoxClicked(keyWord) {
         //get value from user-input and filter db (query selector input)
     }
     //return currentImgs - imgs that follow the search criteria
+}
+
+function searchBttnClicked(keyWord) { //TODO: filter uniques from the result
+    if (keyWord) {
+        console.log('I am called from tag search');
+    } else {
+
+        if (!gEditorEls.searchInput.value) renderImgs(gElImgs, filteredImgs);
+        else {
+            var userKeyWords = gEditorEls.searchInput.value.split(' ');
+
+            var filteredImgs = [];
+            userKeyWords.forEach(function (userKeyWord) {
+                var currFilteredImgs = gImgs.filter(function (gImg) {
+                    return gImg.keyWords.some(function (keyWord) {
+                        return userKeyWord === keyWord
+                    });
+                });
+                filteredImgs = filteredImgs.concat(currFilteredImgs);
+            });
+            console.log(filteredImgs);
+            renderImgs(gElImgs, filteredImgs);
+        }
+    }
 }
 
 

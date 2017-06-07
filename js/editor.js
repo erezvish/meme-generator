@@ -130,7 +130,7 @@ function delTextBttnClicked(elBttn) {
 
 }
 
-function searchBttnClicked() {
+function searchBttnClicked() { //TODO: filter uniques from the result
     if (!gEditorEls.searchInput.value) return;
 
     var userKeyWords = gEditorEls.searchInput.value.split(' ');
@@ -145,4 +145,5 @@ function searchBttnClicked() {
         filteredImgs = filteredImgs.concat(currFilteredImgs);
     });
     console.log(filteredImgs);
+    renderImgs(gElImgs, filteredImgs);
 }
