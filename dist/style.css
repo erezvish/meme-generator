@@ -567,8 +567,7 @@ fieldset {
   position: relative; }
 
 .meme-canvas-div {
-  z-index: 1;
-  width: 100%; }
+  z-index: 1; }
 
 .txt-canvas-div {
   position: absolute;
