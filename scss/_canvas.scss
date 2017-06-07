@@ -1,0 +1,33 @@
+// .canvas-box{
+// //     display: block;
+// //     height: 50px;
+// //     margin: 0;
+// //     position: relative;
+// // }
+
+// .meme-canvas{
+//     // background-color: lightgray;
+//     // position: absolute;
+//     // z-index: 1;
+//     // left: 0;
+//     // top: 0;
+    
+// }
+
+
+.canvas-box{
+   position: relative;
+}
+.meme-canvas-div{
+    // position: absolute;
+    // opacity: 0.3;
+    z-index: 1;
+  
+}
+.txt-canvas-div{
+    position: absolute;
+    z-index: 2;
+  
+}
+
+
