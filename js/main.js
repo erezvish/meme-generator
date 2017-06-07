@@ -12,20 +12,8 @@ var TXT_DEFAULTS = {
 
 var gState = {
     selectedImgId: null,
-    txts: [
-        {
-
-        },
-        {
-            txt: TXT_DEFAULTS.txt,
-            fontDefSize: TXT_DEFAULTS.fontDefSize,
-            txtAlign: TXT_DEFAULTS.txtAlign,
-            fontColor: TXT_DEFAULTS.fontColor,
-            isBorder: TXT_DEFAULTS.isBorder,
-            fontDefFamily: TXT_DEFAULTS.fontsDefFamily
-        }
-    ]
-}
+    txts: []
+};
 
 function initApp() {
     getInitialState();
@@ -40,11 +28,11 @@ function getInitialState() {
     var currTxt = {};
     for (var i = 0; i < INITIAL_TXTS_NUM; i++) {
         currTxt.txt = TXT_DEFAULTS.txt;
-        currTxt.fontDefSize = TXT_DEFAULTS.fontDefSize;
+        currTxt.fontCurrSize = TXT_DEFAULTS.fontDefSize;
         currTxt.txtAlign = TXT_DEFAULTS.txtAlign;
         currTxt.fontColor = TXT_DEFAULTS.fontColor;
         currTxt.isBorder = TXT_DEFAULTS.isBorder;
-        currTxt.fontDefFamily = TXT_DEFAULTS.fontsDefFamily;
+        currTxt.fontCurrFamily = TXT_DEFAULTS.fontsDefFamily;
         gState.txts.push(currTxt);
     }
 }
