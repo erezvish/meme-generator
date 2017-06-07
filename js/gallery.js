@@ -156,7 +156,6 @@ function searchActivated(keyWord) { //TODO: filter uniques from the result
             userKeyWords.forEach(function (userKeyWord) {
                 var currFilteredImgs = gImgs.filter(function (gImg) {
                     return gImg.keyWords.some(function (keyWord) {
-                        debugger;
                         return userKeyWord.toUpperCase() === keyWord.toUpperCase();
                     });
                 });
