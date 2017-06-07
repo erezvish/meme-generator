@@ -23,7 +23,8 @@
 .thumbnails {
     li {
         img {
-            height: em(100px);
+            max-width: em(150px);
+            max-height: em(150px);
             margin: em(10px);
             cursor: pointer;
             transition: border 0.3s;
