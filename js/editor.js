@@ -58,23 +58,6 @@ function initEditor() {
     renderEditor(INITIAL_TEXTS_NUM);
 }
 
-function renderCanvas(url) {
-    var canvas = document.getElementById('memeCanvas');
-    var context = canvas.getContext('2d');
-    console.log('context:', context);  
-    var img = new Image();
-    img.src = url;
-    img.addEventListener('load', function () {
-        context.drawImage(img, 0, 0, 400, 360);
-    });
-
-//     var img = new Image();   // Create new img element
-// img.addEventListener('load', function() {
-//   // execute drawImage statements here
-// }, false);
-// img.src = 'myImage.png'; // Set source path
-}
-
 function renderEditor(textsNum) {
     var strHTML = `<form>
     <div> 
