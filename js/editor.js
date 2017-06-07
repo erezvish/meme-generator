@@ -58,11 +58,12 @@ var gEditorBttns = [
 function initEditor() {
     gEditorEls.toolBoxArea = document.querySelector('.meme-toolbox');
     gEditorEls.searchInput = document.querySelector('.search-input');
-    renderCanvas(null);
+    // renderCanvas();
     renderEditor(INITIAL_TXTS_NUM);
 }
 
-function renderEditor(textsNum) {
+function renderEditor(textsNum) { //TODO: function can take number of txts from gstate.txts.length
+    debugger;
     var strHTML = `<form>
     <div> 
     <div class="bttn-return"> <button type="button">Return to image selection</button> </div>`;
@@ -88,7 +89,7 @@ function textInserted(elTxtInput) {
     var txtId = +elTxtInput.id.slice(3); //text Id preceded by 3 letters;
     // console.log('captured text:', gState.txts[txtId]);
     gState.txts[txtId].txt = elTxtInput.value;
-    renderCanvasTxt();
+    renderCanvas();
 }
 
 function alignBttnClicked(elBttn) {
@@ -96,17 +97,17 @@ function alignBttnClicked(elBttn) {
     var requiredAlignment = elBttn.getAttribute('data-special')
 
     gState.txts[txtId].txtAlign = requiredAlignment;
-    renderCanvasTxt();
+    renderCanvas();
 }
 
-function fontSizeBttnClicked(elBttn) {
+function fontSizeBttnClicked(elBttn) { //TODO: replace all bttn in code //in this function use Math.Max
     var txtId = elBttn.getAttribute('data-txt-num');
     var requiredChange = elBttn.getAttribute('data-special');
 
     if (requiredChange === 'add') gState.txts[txtId].fontCurrSize++;
     else gState.txts[txtId].fontCurrSize--;
     if (gState.txts[txtId].fontCurrSize < LIMITS.minFontSize) gState.txts[txtId].fontCurrSize = LIMITS.minFontSize;
-    renderCanvasTxt();
+    renderCanvas();
 }
 
 function changeFontBttnClicked(elBttn) {
@@ -116,6 +117,7 @@ function changeFontBttnClicked(elBttn) {
 function toggleBorderBttnClicked(elBttn) {
     var txtId = elBttn.getAttribute('data-txt-num');
     gState.txts[txtId].isBorder = !gState.txts[txtId].isBorder;
+    renderCanvas();
 }
 
 function changeColorBttnClicked(elBttn) {
@@ -130,20 +132,3 @@ function delTextBttnClicked(elBttn) {
 
 }
 
-function searchBttnClicked() { //TODO: filter uniques from the result
-    if (!gEditorEls.searchInput.value) return;
-
-    var userKeyWords = gEditorEls.searchInput.value.split(' ');
-
-    var filteredImgs = [];
-    userKeyWords.forEach(function (userKeyWord) {
-        var currFilteredImgs = gImgs.filter(function (gImg) {
-            return gImg.keyWords.some(function (keyWord) {
-                return userKeyWord === keyWord
-            });
-        });
-        filteredImgs = filteredImgs.concat(currFilteredImgs);
-    });
-    console.log(filteredImgs);
-    renderImgs(gElImgs, filteredImgs);
-}

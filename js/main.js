@@ -19,7 +19,6 @@ function initApp() {
     getInitialState();
     initGallery();
     initEditor();
-    // renderCanvas();
 }
 
 function getInitialState() {
