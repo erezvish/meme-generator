@@ -540,7 +540,8 @@ fieldset {
   flex-grow: 4; }
 
 .thumbnails li img {
-  height: 6.25em;
+  max-width: 9.375em;
+  max-height: 9.375em;
   margin: 0.625em;
   cursor: pointer;
   transition: border 0.3s; }
