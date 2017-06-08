@@ -13,18 +13,13 @@
     <header>
       <nav class="navbar">
         <div class="nav-container flex justify-center">
-          <!--<div class="logo">LOGO!</div>-->
-          <!--TODO: Fix location of logo-->
-          <ul class="clean-list">
-            <li class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></li>
-          </ul>
           <div class="main-nav-items flex justify-center">
-            <ul class="clean-list flex align-center">
-              <li><a href="#main-display">Portfolio</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#"><img src="/assets/imgs/arrow.png"></a></li>
-              <li><a href="#">Blog</a> </li>
-              <li><a href="#">Get in Touch!</a> </li>
+            <ul class="clean-list flex-col justify-center">
+              <li class="flex justify-center hamburger-arrow"> <a href="#"><img onclick="navArrowClicked()" src="/assets/imgs/arrow.png"></a> </li>
+              <li class="flex justify-center drop-down unseen"><a href="#main-display">Portfolio</a></li>
+              <li class="flex justify-center drop-down unseen"><a href="#about">About</a></li>
+              <li class="flex justify-center drop-down unseen"><a href="#">Blog</a> </li>
+              <li class="flex justify-center drop-down unseen"><a href="#">Get in Touch!</a> </li>
             </ul>
           </div>
         </div>
@@ -103,6 +98,7 @@
   <!--<script src="js/utils.js"></script>-->
   <script src="node_modules/underscore/underscore-min.js"></script>
   <script src="js/canvas.js"></script>
+  <script src="js/navbar.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/editor.js"></script>
   <script src="js/main.js"></script>

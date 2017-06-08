@@ -1,11 +1,17 @@
 .gallery {
     display: block;
     border: 2px solid var(--main-color);
+    z-index: 1;
 }
 
 .search-input {
     text-align: center;
     margin: auto;
+    z-index: 1;
+}
+
+.tags-display-button {
+    z-index: 1;
 }
 
 .responsive-gallery {
@@ -21,6 +27,7 @@
 }
 
 .thumbnails {
+    z-index: 1;
     li {
         img {
             max-width: em(140px);
@@ -28,6 +35,7 @@
             margin: em(5px);
             border: var(--img-nohover-border) solid white;
             border-radius: em(15px);
+            z-index: 1;
             cursor: pointer;
             transition: border 0.5s;
             &:hover {

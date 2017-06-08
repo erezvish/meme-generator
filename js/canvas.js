@@ -7,7 +7,7 @@ function renderCanvas() {
     console.log('context:', context);
     var img = new Image();
     img.src = gImgs[gState.selectedImgId].url;
-        context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    context.drawImage(img, 0, 0, canvas.width, canvas.height);
     gState.txts.forEach(function (txt, idx) { //TODO: use all other txts properties
         context.font =text.fontCurrFamily + txt.fontCurrSize + 'px';
         context.strokeStyle = txt.fontColor;
