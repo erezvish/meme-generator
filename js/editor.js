@@ -7,50 +7,50 @@ var LIMITS = {
 
 var gEditorEls = {};
 
-var gEditorBttns = [
+var gEditorbtns = [
     {
         glyph: '<i class="fa fa-trash-o"></i>',
-        onclick: 'delTextBttnClicked(this)',
+        onclick: 'delTextbtnClicked(this)',
         dataAttribute: null
     },
     {
         glyph: 'A',
-        onclick: 'changeFontBttnClicked(this)',
+        onclick: 'changeFontbtnClicked(this)',
         dataAttribute: null
     },
     {
         glyph: 'S',
-        onclick: 'toggleBorderBttnClicked(this)',
+        onclick: 'toggleBorderbtnClicked(this)',
         dataAttribute: null
     },
     {
         glyph: '<i class="fa fa-tint"></i>',
-        onclick: 'changeColorBttnClicked(this)',
+        onclick: 'changeColorbtnClicked(this)',
         dataAttribute: null
     },
     {
         glyph: '<i class="fa fa-plus"></i>',
-        onclick: 'fontSizeBttnClicked(this)',
+        onclick: 'fontSizebtnClicked(this)',
         dataAttribute: 'add'
     },
     {
         glyph: '<i class="fa fa-minus"></i>',
-        onclick: 'fontSizeBttnClicked(this)',
+        onclick: 'fontSizebtnClicked(this)',
         dataAttribute: 'decrement'
     },
     {
         glyph: '<i class="fa fa-align-left"></i>',
-        onclick: 'alignBttnClicked(this)',
+        onclick: 'alignbtnClicked(this)',
         dataAttribute: 'left'
     },
     {
         glyph: '<i class="fa fa-align-center"></i>',
-        onclick: 'alignBttnClicked(this)',
+        onclick: 'alignbtnClicked(this)',
         dataAttribute: 'center'
     },
     {
         glyph: '<i class="fa fa-align-right"></i>',
-        onclick: 'alignBttnClicked(this)',
+        onclick: 'alignbtnClicked(this)',
         dataAttribute: 'right'
     }
 ];
@@ -77,11 +77,11 @@ function renderEditor(textsNum) {
 function getToolBoxHTML(id) {
     var inputHTML = ` <div> <input type="text" id="txt${id}" class="tool-box-txt" onkeyup="textInserted(this)" placeholder="Input your text"> </div>
                     <div class="tool-buttons">`;
-    var bttnsHTML = gEditorBttns.map(function (gBttn, ) {
+    var btnsHTML = gEditorbtns.map(function (gbtn, ) {
         return `<button type="button" class="btn-edit"
-        onclick="${gBttn.onclick}" data-special="${gBttn.dataAttribute}" data-txt-num="${id}">${gBttn.glyph}</button>`;
+        onclick="${gbtn.onclick}" data-special="${gbtn.dataAttribute}" data-txt-num="${id}">${gbtn.glyph}</button>`;
     });
-    return `${inputHTML} ${bttnsHTML.join('')} </div>`;
+    return `${inputHTML} ${btnsHTML.join('')} </div>`;
 }
 
 function textInserted(elTxtInput) {
@@ -92,17 +92,17 @@ function textInserted(elTxtInput) {
     renderCanvas();
 }
 
-function alignBttnClicked(elBttn) {
-    var txtId = elBttn.getAttribute('data-txt-num');
-    var requiredAlignment = elBttn.getAttribute('data-special')
+function alignbtnClicked(elbtn) {
+    var txtId = elbtn.getAttribute('data-txt-num');
+    var requiredAlignment = elbtn.getAttribute('data-special')
 
     gState.txts[txtId].txtAlign = requiredAlignment;
     renderCanvas();
 }
 
-function fontSizeBttnClicked(elBttn) { //TODO: replace all bttn in code //in this function use Math.Max
-    var txtId = elBttn.getAttribute('data-txt-num');
-    var requiredChange = elBttn.getAttribute('data-special');
+function fontSizebtnClicked(elbtn) { //TODO: replace all btn in code //in this function use Math.Max
+    var txtId = elbtn.getAttribute('data-txt-num');
+    var requiredChange = elbtn.getAttribute('data-special');
 
     if (requiredChange === 'add') gState.txts[txtId].fontSize++;
     else gState.txts[txtId].fontSize--;
@@ -110,25 +110,25 @@ function fontSizeBttnClicked(elBttn) { //TODO: replace all bttn in code //in thi
     renderCanvas();
 }
 
-function changeFontBttnClicked(elBttn) {
+function changeFontbtnClicked(elbtn) {
 
 }
 
-function toggleBorderBttnClicked(elBttn) {
-    var txtId = elBttn.getAttribute('data-txt-num');
+function toggleBorderbtnClicked(elbtn) {
+    var txtId = elbtn.getAttribute('data-txt-num');
     gState.txts[txtId].isBorder = !gState.txts[txtId].isBorder;
     renderCanvas();
 }
 
-function changeColorBttnClicked(elBttn) {
+function changeColorbtnClicked(elbtn) {
 
 }
 
-function addTextBttnClicked(elBttn) {
+function addTextbtnClicked(elbtn) {
 
 }
 
-function delTextBttnClicked(elBttn) {
+function delTextbtnClicked(elbtn) {
 
 }
 

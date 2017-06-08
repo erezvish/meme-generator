@@ -35,3 +35,14 @@ function getInitialState() {
         currTxt = {};
     }
 }
+
+// function clearStateTxts() { //could not complete in time
+//     gState.txts.forEach(function (gTxt) {
+//         gTxt = TXT_DEFAULTS.txt;
+//         gTxt.fontSize = TXT_DEFAULTS.fontSize;
+//         gTxt.txtAlign = TXT_DEFAULTS.txtAlign;
+//         gTxt.fontColor = TXT_DEFAULTS.fontColor;
+//         gTxt.isBorder = TXT_DEFAULTS.isBorder;
+//         gTxt.fontFamily = TXT_DEFAULTS.fontFamily;
+//     });
+// }

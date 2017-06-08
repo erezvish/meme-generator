@@ -170,7 +170,7 @@ function searchActivated(keyWord) {
 }
 
 function toggleGalleryEditor() {
-    renderCanvas();
+    // clearStateTxts(); //could not complete in time
     var elGallery = document.querySelector('.gallery');
     elGallery.classList.toggle('go-outside');
     var elEditor = document.querySelector('.meme-editor');
