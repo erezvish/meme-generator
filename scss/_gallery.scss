@@ -23,11 +23,13 @@
 .thumbnails {
     li {
         img {
-            max-width: em(150px);
-            max-height: em(150px);
-            margin: em(10px);
+            max-width: em(140px);
+            max-height: em(140px);
+            margin: em(5px);
+            border: var(--img-nohover-border) solid white;
+            border-radius: em(15px);
             cursor: pointer;
-            transition: border 0.3s;
+            transition: border 0.5s;
             &:hover {
                 border: var(--img-hover-border);
             }

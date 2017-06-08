@@ -440,14 +440,15 @@ template {
   /* Fonts */
   --primary-font: Lato;
   --secondary-font: Ubuntu;
-  /* Colors */
+  /* Colors and Borders */
   --main-color: #626262;
   --sections-bg: #f0f0f0;
   --top-nav-bg: #323232;
   --about-bg: #2eb398;
   --contact-bg: #323232;
   --li-hover: #2ab499;
-  --img-hover-border: 0.125em solid darkgreen; }
+  --img-hover-border: 0.25em solid darkgreen;
+  --img-nohover-border: 0.25em; }
 
 /*----------  Containers  ----------*/
 .container {
@@ -608,11 +609,13 @@ fieldset {
   flex-grow: 4; }
 
 .thumbnails li img {
-  max-width: 9.375em;
-  max-height: 9.375em;
-  margin: 0.625em;
+  max-width: 8.75em;
+  max-height: 8.75em;
+  margin: 0.3125em;
+  border: var(--img-nohover-border) solid white;
+  border-radius: 0.9375em;
   cursor: pointer;
-  transition: border 0.3s; }
+  transition: border 0.5s; }
   .thumbnails li img:hover {
     border: var(--img-hover-border); }
 
