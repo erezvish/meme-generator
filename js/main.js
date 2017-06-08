@@ -3,10 +3,10 @@ console.log('main js is running');
 var INITIAL_TXTS_NUM = 2;
 var TXT_DEFAULTS = {
     txt: '',
-    fontSize: 14,
+    fontSize: 24,
     txtAlign: 'center',
     fontColor: 'White',
-    isBorder: true,
+    isBorder: false,
     fontFamily: 'Arial',
 }
 

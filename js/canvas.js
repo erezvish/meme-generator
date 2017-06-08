@@ -9,16 +9,20 @@ function renderCanvas() {
     context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
     var locYTop = canvas.height / 8;
-
     gState.txts.forEach(function (txt, idx) { //TODO: use all other txts properties
         var temp = txt.fontSize + 'px ' + txt.fontFamily;
         context.font = txt.fontSize + 'px ' + txt.fontFamily;
-        console.log(context.font);
-        context.strokeStyle = txt.fontColor;
-
+        // context.textAlign = txt.txtAlign;
         context.fillStyle = txt.fontColor;
         context.fillText(txt.txt, 40, (locYTop + locYTop * 6 * idx)
-         + (txt.fontSize * (idx + 1) - txt.fontSize * 2 * idx), canvas.width - 80); //quick and dirty but working. Sorry!
+            + (txt.fontSize * (idx + 1) - txt.fontSize * 2 * idx), canvas.width - 80); //quick and dirty but working. Sorry!
+
+        if (txt.isBorder) {
+            context.lineWidth = 1;
+            context.strokeStyle = 'black';
+            context.strokeText(txt.txt, 40, (locYTop + locYTop * 6 * idx)
+                + (txt.fontSize * (idx + 1) - txt.fontSize * 2 * idx), canvas.width - 80); //quick and dirty but working. Sorry!
+        }
     });
 }
 
