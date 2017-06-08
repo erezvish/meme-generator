@@ -140,12 +140,8 @@ function imgClicked(elImg) {
         gState.selectedImgId = selectedImg.id;
         renderCanvas(selectedImg.url); //draw canvas with selected img and render editor
         console.log('img clicked:', elImg.src);
-        var elGallery = document.querySelector('.gallery');
-        elGallery.classList.toggle('go-outside');
-        var elEditor = document.querySelector('.meme-editor');
-        elEditor.classList.toggle('go-inside');
+        toggleGalleryEditor();
     }
-
 }
 
 function searchActivated(keyWord) { //TODO: filter uniques from the result
@@ -170,5 +166,9 @@ function searchActivated(keyWord) { //TODO: filter uniques from the result
     }
 }
 
-
-
+function toggleGalleryEditor() {
+    var elGallery = document.querySelector('.gallery');
+    elGallery.classList.toggle('go-outside');
+    var elEditor = document.querySelector('.meme-editor');
+    elEditor.classList.toggle('go-inside');
+}
