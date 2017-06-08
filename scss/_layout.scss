@@ -29,6 +29,14 @@
   flex-direction: column;
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
 .align-center {
   align-items: center;
 }

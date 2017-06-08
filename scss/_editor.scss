@@ -22,12 +22,12 @@
         margin: 2px;
         height: 30px;
         width:30px;
-            cursor: pointer;
-            transition: color 0.3s;
-            &:hover {
-                color: green;
-                border: 1px solid gray;
-            }
+        cursor: pointer;
+        transition: color 0.3s;
+        &:hover {
+            color: green;
+            border: 1px solid gray;
+        }
     }
 }
 
@@ -44,7 +44,7 @@
         font-family: lato;
     
         cursor: pointer;
-            transition: color 0.3s;
+        transition: color 0.3s;
             &:hover {
                 color: white;
                 outline-color: 1px solid gray;
