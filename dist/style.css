@@ -450,7 +450,7 @@ template {
   --about-bg: #2eb398;
   --contact-bg: #323232;
   --li-hover: #2ab499;
-  --img-hover-border: 0.25em solid darkgreen;
+  --img-hover-border: 0.25em solid darkblue;
   --img-nohover-border: 0.25em; }
 
 /*----------  Containers  ----------*/

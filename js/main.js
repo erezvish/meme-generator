@@ -3,11 +3,11 @@ console.log('main js is running');
 var INITIAL_TXTS_NUM = 2;
 var TXT_DEFAULTS = {
     txt: '',
-    fontDefSize: 14,
+    fontSize: 14,
     txtAlign: 'center',
     fontColor: 'White',
     isBorder: true,
-    fontDefFamily: 'Arial',
+    fontFamily: 'Arial',
 }
 
 var gState = {
@@ -27,11 +27,11 @@ function getInitialState() {
     var currTxt = {};
     for (var i = 0; i < INITIAL_TXTS_NUM; i++) {
         currTxt.txt = TXT_DEFAULTS.txt;
-        currTxt.fontCurrSize = TXT_DEFAULTS.fontDefSize;
+        currTxt.fontSize = TXT_DEFAULTS.fontSize;
         currTxt.txtAlign = TXT_DEFAULTS.txtAlign;
         currTxt.fontColor = TXT_DEFAULTS.fontColor;
         currTxt.isBorder = TXT_DEFAULTS.isBorder;
-        currTxt.fontCurrFamily = TXT_DEFAULTS.fontsDefFamily;
+        currTxt.fontFamily = TXT_DEFAULTS.fontFamily;
         gState.txts.push(currTxt);
         currTxt = {};
     }

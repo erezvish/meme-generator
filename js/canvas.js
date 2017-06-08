@@ -4,36 +4,23 @@ function renderCanvas() {
     var canvas = document.getElementById('memeCanvas');
     var context = canvas.getContext('2d');
     context.clearRect(0, 0, canvas.width, canvas.height);
-    console.log('context:', context);
     var img = new Image();
     img.src = gImgs[gState.selectedImgId].url;
     context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+    var locYTop = canvas.height / 8;
+
     gState.txts.forEach(function (txt, idx) { //TODO: use all other txts properties
-        context.font =text.fontCurrFamily + txt.fontCurrSize + 'px';
+        var temp = txt.fontSize + 'px ' + txt.fontFamily;
+        context.font = txt.fontSize + 'px ' + txt.fontFamily;
+        console.log(context.font);
         context.strokeStyle = txt.fontColor;
-  
-        context.strokeText(txt.txt,10, 150 * idx + 20 , canvas.width);
+
+        context.fillStyle = txt.fontColor;
+        context.fillText(txt.txt, 40, (locYTop + locYTop * 6 * idx)
+         + (txt.fontSize * (idx + 1) - txt.fontSize * 2 * idx), canvas.width - 80); //quick and dirty but working. Sorry!
     });
 }
 
 
-/*
 
-fontColor:"White"****
-fontCurrFamily:undefined
-fontCurrSize:14 ******
-isBorder:true
-txt:""
-txtAlign
-
-function drawStroked(text, x, y) {
-    ctx.font = "80px Sans-serif"
-
-    ctx.strokeStyle = 'black';
-    ctx.lineWidth = 8;
-    ctx.strokeText(text, x, y);
-    ctx.fillStyle = 'white';
-
-    ctx.fillText(text, x, y);
-}
-*/
