@@ -85,38 +85,20 @@
   background: inherit;
 }
 
-// .about-social-buttons{
-//    & a{
-//         line-height: 25px;
-//         color:#fff;
-//         height: 100%;
-//         width: 100%;
-
-//     }
-//     margin-top:2em;
-//     &>*{
-//         width:25px;
-//         height: 25px;
-//         border: none;
-//         margin: none;
-//         display:block;
-//     }
-
-// }
 .profile-description{
-  h1{
     color: white;
+}
+hr {
+  width: 90%;
+}
+
+.about-social-buttons{
+  button{
+    background: #8cfde6;
+    border: 1px solid white;
+    opacity: 0.4;
+    width:25px;
+    height: 25px;
+    margin-left: 5px;
   }
-
-}
-
-.fa-facebook {
-    background:#3660a0;
-}
-
-.fa-linkedin {
-    background:#096c9b;
-}
-.fa-instagram{
-     background: red;
 }
