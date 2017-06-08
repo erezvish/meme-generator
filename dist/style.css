@@ -531,6 +531,9 @@ fieldset {
   padding: 0;
   margin: 0; }
 
+button {
+  border-radius: 2px; }
+
 .moveables {
   display: block; }
 
