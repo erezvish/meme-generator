@@ -10,10 +10,7 @@ var TXT_DEFAULTS = {
     fontFamily: 'Arial',
 }
 
-var gState = {
-    selectedImgId: null,
-    txts: []
-};
+var gState = {};
 
 function initApp() {
     getInitialState();
@@ -23,6 +20,8 @@ function initApp() {
 
 function getInitialState() {
     gState.selectedImgId = null;
+    gState.currBatch = 0;
+    gState.displayedImgsNum = 6;
     gState.txts = [];
     var currTxt = {};
     for (var i = 0; i < INITIAL_TXTS_NUM; i++) {
