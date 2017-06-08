@@ -110,7 +110,6 @@ function initGallery() {
 
 }
 
-//TODO: currently only the first 6 images are rendered. The rest are ignored. Change!
 function renderImgs(elImgs, imgs) {
     clearElImgs(elImgs);
     elImgs.forEach(function (elImg, idx) {
@@ -148,7 +147,7 @@ function imgClicked(elImg) {
     }
 }
 
-function searchActivated(keyWord) { //TODO: filter uniques from the result
+function searchActivated(keyWord) { 
     if (keyWord) {
         console.log('I am called from tag search');
     } else {
@@ -171,6 +170,7 @@ function searchActivated(keyWord) { //TODO: filter uniques from the result
 }
 
 function toggleGalleryEditor() {
+    renderCanvas();
     var elGallery = document.querySelector('.gallery');
     elGallery.classList.toggle('go-outside');
     var elEditor = document.querySelector('.meme-editor');
@@ -184,11 +184,4 @@ function loadBtnClicked() {
     if (gState.currBatch === numOfBatches)      gState.currBatch = 0; 
     else                                        gState.currBatch++;
     renderImgs(gElImgs, gImgs);
-}
-
-function saveBtnClicked() {
-    var elCanvas = document.querySelector('.meme-canvas');
-    console.log(elCanvas);
-    var savedMeme = elCanvas.canvas.toDataURL();
-    console.log('Your meme is:', savedMeme);
 }

@@ -621,7 +621,7 @@ button {
   z-index: 2;
   background: inherit; }
 
-.profile-description {
+.profile-description h1 {
   color: white; }
 
 .fa-facebook {

@@ -62,11 +62,11 @@ function initEditor() {
     renderEditor(gState.txts.length);
 }
 
-function renderEditor(textsNum) { //TODO: function can take number of txts from gstate.txts.length
+function renderEditor(textsNum) { 
     var strHTML = `<form>
     <div> 
     <div class="btn-return flex justify-center"> <button class="return-button" type="button" onclick="toggleGalleryEditor()">Return to <br> meme gallery</button> </div>;
-    <div class="btn-return flex justify-center"> <button class="return-button" type="button" onclick="toggleGalleryEditor()">Return to <br> meme gallery</button> </div>`;
+    <div class="btn-return flex justify-center"> <button class="return-button" type="button" onclick="saveBtnClicked()">Save Meme!</button> </div>`;
     for (var i = 0; i < textsNum; i++) {
         strHTML += '<div>' + getToolBoxHTML(i) + '</div>';
     }
@@ -130,4 +130,9 @@ function addTextBttnClicked(elBttn) {
 
 function delTextBttnClicked(elBttn) {
 
+}
+
+function saveBtnClicked() {
+    var elCanvas = document.querySelector('.meme-canvas');
+    window.location = elCanvas.toDataURL();
 }
