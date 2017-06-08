@@ -10,14 +10,15 @@ $xs:340px;
   /* Fonts */
   --primary-font: Lato;
   --secondary-font: Ubuntu;
-  /* Colors */
+  /* Colors and Borders */
   --main-color: #626262;
   --sections-bg: #f0f0f0;
   --top-nav-bg: #323232;
   --about-bg: #2eb398;
   --contact-bg: #323232;
   --li-hover: #2ab499;
-  --img-hover-border: em(2px) solid darkgreen;
+  --img-hover-border: em(4px) solid darkgreen;
+  --img-nohover-border: em(4px);
 
 }
 

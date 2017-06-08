@@ -159,9 +159,8 @@ function searchActivated(keyWord) { //TODO: filter uniques from the result
                         return userKeyWord.toUpperCase() === keyWord.toUpperCase();
                     });
                 });
-                filteredImgs = filteredImgs.concat(currFilteredImgs);
+                filteredImgs = _.uniq(filteredImgs.concat(currFilteredImgs));
             });
-            // console.log(filteredImgs);
             renderImgs(gElImgs, filteredImgs);
         }
     }
