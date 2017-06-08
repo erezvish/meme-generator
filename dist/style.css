@@ -415,6 +415,9 @@ template {
   margin: auto;
   text-align: center; }
 
+.unseen {
+  visibility: hidden; }
+
 /*----------  Playfair Font  ----------*/
 @font-face {
   font-family: 'Playfair';
@@ -469,7 +472,7 @@ template {
 .align-center {
   align-items: center; }
 
-.align-sart {
+.align-start {
   align-items: flex-start; }
 
 .justify-center {
@@ -486,6 +489,9 @@ template {
 
 .justify-start {
   justify-content: flex-start; }
+
+.justify-end {
+  justify-content: flex-end; }
 
 .align-self-start {
   align-self: flex-start; }
@@ -595,11 +601,16 @@ fieldset {
 
 .gallery {
   display: block;
-  border: 2px solid var(--main-color); }
+  border: 2px solid var(--main-color);
+  z-index: 1; }
 
 .search-input {
   text-align: center;
-  margin: auto; }
+  margin: auto;
+  z-index: 1; }
+
+.tags-display-button {
+  z-index: 1; }
 
 .tags-display {
   background-color: blue;
@@ -608,36 +619,56 @@ fieldset {
 .img-display {
   flex-grow: 4; }
 
-.thumbnails li img {
-  max-width: 8.75em;
-  max-height: 8.75em;
-  margin: 0.3125em;
-  border: var(--img-nohover-border) solid white;
-  border-radius: 0.9375em;
-  cursor: pointer;
-  transition: border 0.5s; }
-  .thumbnails li img:hover {
-    border: var(--img-hover-border); }
+.thumbnails {
+  z-index: 1; }
+  .thumbnails li img {
+    max-width: 8.75em;
+    max-height: 8.75em;
+    margin: 0.3125em;
+    border: var(--img-nohover-border) solid white;
+    border-radius: 0.9375em;
+    z-index: 1;
+    cursor: pointer;
+    transition: border 0.5s; }
+    .thumbnails li img:hover {
+      border: var(--img-hover-border); }
 
 .nav-container {
   height: 4.0625em;
   background-color: var(--top-nav-bg);
   margin-bottom: 1.25em; }
-  .nav-container li a {
-    color: #f1f1f1;
-    text-transform: uppercase;
-    padding: 0 1.5625em;
-    font-family: var(--primary-font);
-    cursor: pointer;
-    transition: color 0.3s; }
-    .nav-container li a:hover {
-      color: var(--li-hover); }
+  .nav-container ul {
+    position: relative;
+    width: 100%; }
+  .nav-container li {
+    text-align: center;
+    line-height: 2.5; }
+    .nav-container li a {
+      width: 100%;
+      margin: 0 auto;
+      color: #f1f1f1;
+      background-color: var(--top-nav-bg);
+      text-transform: uppercase;
+      padding: 0 1.5625em;
+      font-family: var(--primary-font);
+      cursor: pointer;
+      transition: color 0.3s; }
+      .nav-container li a:hover {
+        color: var(--li-hover); }
+  .nav-container input[type=checkbox] {
+    position: absolute; }
+  .nav-container input[type=checkbox]:checked ~ li:not(:first-child) {
+    display: block; }
 
-.hamburger {
-  font-size: 2rem;
-  cursor: pointer; }
-  .hamburger:hover {
-    color: var(--li-hover); }
+.main-nav-items {
+  width: 100%;
+  opacity: 0.95;
+  z-index: 5; }
+
+.nav-toggle-label {
+  position: absolute;
+  left: 10vw;
+  border: 1px solid white; }
 
 .meme-toolbox input.tool-box-txt {
   width: 100%;
