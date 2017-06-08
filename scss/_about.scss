@@ -1,6 +1,7 @@
 .about { //TDOD: don't forget to delete
     background-color: var(--about-bg);
     padding: em(70px) em(10px);
+    color:white;
 
     img {
         padding: em(0px) em(10px);
@@ -82,4 +83,38 @@
   height: 86.6025px;
   z-index: 2;
   background: inherit;
+}
+
+// .about-social-buttons{
+//    & a{
+//         line-height: 25px;
+//         color:#fff;
+//         height: 100%;
+//         width: 100%;
+
+//     }
+//     margin-top:2em;
+//     &>*{
+//         width:25px;
+//         height: 25px;
+//         border: none;
+//         margin: none;
+//         display:block;
+//     }
+
+// }
+
+.profile-description{
+  color: white;
+}
+
+.fa-facebook {
+    background:#3660a0;
+}
+
+.fa-linkedin {
+    background:#096c9b;
+}
+.fa-instagram{
+     background: red;
 }
