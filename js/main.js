@@ -7,7 +7,7 @@ var TXT_DEFAULTS = {
     txtAlign: 'center',
     fontColor: 'White',
     isBorder: true,
-    fontDefFamily1: 'Arial',
+    fontDefFamily: 'Arial',
 }
 
 var gState = {
