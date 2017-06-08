@@ -24,6 +24,11 @@ fieldset {
   margin: 0;
 }
 
+button {
+  border-radius: 2px;
+}
+
 .moveables {
   display:block;
+  padding-bottom: em(70px);
 }

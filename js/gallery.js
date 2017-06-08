@@ -114,10 +114,14 @@ function initGallery() {
 function renderImgs(elImgs, imgs) {
     clearElImgs(elImgs);
     elImgs.forEach(function (elImg, idx) {
-        if (imgs[idx]) {
-            elImg.src = imgs[idx].url;
-            elImg.id = 'img' + imgs[idx].id;
+        var currIdx = idx +  gState.displayedImgsNum * gState.currBatch;
+        if (imgs[currIdx]) {
+            elImg.src = imgs[currIdx].url;
+            elImg.id = 'img' + imgs[currIdx].id;
             elImg.onclick = imgClicked(elImg);
+        } else {
+            elImg.src = 'assets/imgs/galleryImgs/noImg.jpg';
+            elImg.onclick = '';
         }
     });
 }
@@ -171,4 +175,17 @@ function toggleGalleryEditor() {
     elGallery.classList.toggle('go-outside');
     var elEditor = document.querySelector('.meme-editor');
     elEditor.classList.toggle('go-inside');
+}
+
+
+function loadBtnClicked() {
+    var numOfBatches = parseInt(gImgs.length / gState.displayedImgsNum);
+    // gState.currBatch = (gState.currBatch === numOfBatches) ? 0 : gState.currBatch++;
+    if (gState.currBatch === numOfBatches)      gState.currBatch = 0; 
+    else                                        gState.currBatch++;
+    renderImgs(gElImgs, gImgs);
+}
+
+function saveBtnClicked() {
+
 }

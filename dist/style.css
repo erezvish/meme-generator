@@ -461,14 +461,9 @@ template {
   --contact-bg: #323232;
   --form-enter-txt-bg: #454545;
   --li-hover: #2ab499;
-<<<<<<< HEAD
-  --img-hover-border: 0.25em solid darkgreen;
+  --img-hover-border: 0.25em solid darkblue;
   --img-nohover-border: 0.25em;
   --about_sec_header: #20816d; }
-=======
-  --img-hover-border: 0.25em solid darkblue;
-  --img-nohover-border: 0.25em; }
->>>>>>> 89562e983a4988aabb5595f21bd9e444016e96e7
 
 /*----------  Containers  ----------*/
 .container {
@@ -545,8 +540,12 @@ fieldset {
   padding: 0;
   margin: 0; }
 
+button {
+  border-radius: 2px; }
+
 .moveables {
-  display: block; }
+  display: block;
+  padding-bottom: 4.375em; }
 
 /* Components */
 .about {
@@ -712,8 +711,8 @@ fieldset {
     .thumbnails li img:hover {
       border: var(--img-hover-border); }
 
-.loadmore {
-  margin-top: 2.5em; }
+.editor-buttons {
+  margin-top: 0.625em; }
 
 .nav-container {
   height: 4.0625em;
