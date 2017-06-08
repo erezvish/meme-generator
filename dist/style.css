@@ -624,14 +624,16 @@ button {
 .profile-description h1 {
   color: white; }
 
-.fa-facebook {
-  background: #3660a0; }
+hr {
+  width: 90%; }
 
-.fa-linkedin {
-  background: #096c9b; }
-
-.fa-instagram {
-  background: red; }
+.about-social-buttons button {
+  background: #8cfde6;
+  border: 1px solid white;
+  opacity: 0.4;
+  width: 25px;
+  height: 25px;
+  margin-left: 5px; }
 
 .contact {
   height: 200px;
@@ -790,7 +792,7 @@ button {
     cursor: pointer;
     transition: color 0.3s; }
     .meme-toolbox button.btn-edit:hover {
-      color: green;
+      color: grey;
       border: 1px solid gray; }
 
 .btn-return > button {
