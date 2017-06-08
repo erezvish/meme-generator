@@ -59,13 +59,13 @@ function initEditor() {
     gEditorEls.toolBoxArea = document.querySelector('.meme-toolbox');
     gEditorEls.searchInput = document.querySelector('.search-input');
     // renderCanvas();
-    renderEditor(INITIAL_TXTS_NUM);
+    renderEditor(gState.txts.length);
 }
 
 function renderEditor(textsNum) { //TODO: function can take number of txts from gstate.txts.length
     var strHTML = `<form>
     <div> 
-    <div class="btn-return flex justify-center"> <button type="button">Return to <br> meme gallery</button> </div>`;
+    <div class="btn-return flex justify-center"> <button class="return-button" type="button" onclick="toggleGalleryEditor()">Return to <br> meme gallery</button> </div>`;
     for (var i = 0; i < textsNum; i++) {
         strHTML += '<div>' + getToolBoxHTML(i) + '</div>';
     }
@@ -103,9 +103,9 @@ function fontSizeBttnClicked(elBttn) { //TODO: replace all bttn in code //in thi
     var txtId = elBttn.getAttribute('data-txt-num');
     var requiredChange = elBttn.getAttribute('data-special');
 
-    if (requiredChange === 'add') gState.txts[txtId].fontCurrSize++;
-    else gState.txts[txtId].fontCurrSize--;
-    if (gState.txts[txtId].fontCurrSize < LIMITS.minFontSize) gState.txts[txtId].fontCurrSize = LIMITS.minFontSize;
+    if (requiredChange === 'add') gState.txts[txtId].fontSize++;
+    else gState.txts[txtId].fontSize--;
+    if (gState.txts[txtId].fontSize < LIMITS.minFontSize) gState.txts[txtId].fontSize = LIMITS.minFontSize;
     renderCanvas();
 }
 
@@ -130,4 +130,3 @@ function addTextBttnClicked(elBttn) {
 function delTextBttnClicked(elBttn) {
 
 }
-

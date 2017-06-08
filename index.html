@@ -25,51 +25,52 @@
         </div>
       </nav>
     </header>
-
-    <section class="gallery">
-      <div class="search-box center">
-        <button class="tags-display-button">Tag Search</button>
-        <input type="text" class="search-input flex-1" onkeyup="searchActivated()" name="search-input" placeholder="Enter Keyword">
-      </div>
-      <div class="responsive-gallery flex">
-        <div class="img-display">
-          <ul class="thumbnails clean-list flex flex-wrap align-center justify-center">
-            <li class="flex"><img>
-              <p> </p>
-            </li>
-            <li class="flex"><img>
-              <p> </p>
-            </li>
-            <li class="flex"><img>
-              <p> </p>
-            </li>
-            <li class="flex"><img>
-              <p> </p>
-            </li>
-            <li class="flex"><img>
-              <p> </p>
-            </li>
-            <li class="flex"><img>
-              <p> </p>
-            </li>
-          </ul>
+    <div class="moveables">
+      <section class="gallery">
+        <div class="search-box center">
+          <button class="tags-display-button">Tag Search</button>
+          <input type="text" class="search-input flex-1" onkeyup="searchActivated()" name="search-input" placeholder="Enter Keyword">
         </div>
-      </div>
-    </section>
-
-    <section class="meme-editor flex flex-col justify-center">
-
-      <!-- CANVAS AREA-->
-      <div class="canvas-box flex justify-center">
-        <div class="meme-canvas-div">
-          <canvas class="meme-canvas" id="memeCanvas" dir="ltr" width="320" height="215">Update Your Browser To Enjoy Canvas</canvas>
+        <div class="responsive-gallery flex">
+          <div class="img-display">
+            <ul class="thumbnails clean-list flex flex-wrap align-center justify-center">
+              <li class="flex"><img>
+                <p> </p>
+              </li>
+              <li class="flex"><img>
+                <p> </p>
+              </li>
+              <li class="flex"><img>
+                <p> </p>
+              </li>
+              <li class="flex"><img>
+                <p> </p>
+              </li>
+              <li class="flex"><img>
+                <p> </p>
+              </li>
+              <li class="flex"><img>
+                <p> </p>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
+          <div class="loadmore"><button>Load More!</button></div>
+      </section>
 
-      <!-- EDITOR TOOL BOX-->
-      <div class="meme-toolbox flex justify-center"></div>
-    </section>
+      <section class="meme-editor flex flex-col justify-center outside">
 
+        <!-- CANVAS AREA-->
+        <div class="canvas-box flex justify-center">
+          <div class="meme-canvas-div">
+            <canvas class="meme-canvas" id="memeCanvas" dir="ltr" width="320" height="215">Update Your Browser To Enjoy Canvas</canvas>
+          </div>
+        </div>
+
+        <!-- EDITOR TOOL BOX-->
+        <div class="meme-toolbox flex justify-center"></div>
+      </section>
+    </div>
     <section class="about flex flex-col align-center">
       <div class="hexagon dev1">
         <div class="hexTop"></div>
@@ -88,8 +89,9 @@
       <div class="profile-description flex flex-col align-center">
         <h1>Erez Vishnia</h1>
         <h3>Aspiring Web Developer</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusantium repellat soluta dignissimos mollitia
-            error voluptates fuga, ex ratione fugit non deserunt, amet quas ipsum dolore magni itaque repudiandae distinctio.</p>
+          <p>A resident of Tzoran, Erez enjoys the quiet life with his family and friends. Formerly an economist working in
+            large project, he is now in the process of transforming into a Web Developer. In his spare time he practices
+            martial arts, specifically Karate</p>
       </div>
     </section>
 

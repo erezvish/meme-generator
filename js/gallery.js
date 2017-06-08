@@ -133,14 +133,14 @@ function clearElImgs(elImgs) {
 function imgClicked(elImg) {
     return function () {
         var elImgId = +elImg.id.slice(3); //DOM ID starts with 3 letters. Model has only numbers
-        //TODO: grabbing the model img may be an overkill. if only img src needed elImg has it
-        //leaving it for now to see if will be needed later. Remove if not necessary
+
         var selectedImg = gImgs.find(function (img) {
             return img.id === elImgId;
         });
         gState.selectedImgId = selectedImg.id;
         renderCanvas(selectedImg.url); //draw canvas with selected img and render editor
         console.log('img clicked:', elImg.src);
+        toggleGalleryEditor();
     }
 }
 
@@ -166,5 +166,9 @@ function searchActivated(keyWord) { //TODO: filter uniques from the result
     }
 }
 
-
-
+function toggleGalleryEditor() {
+    var elGallery = document.querySelector('.gallery');
+    elGallery.classList.toggle('go-outside');
+    var elEditor = document.querySelector('.meme-editor');
+    elEditor.classList.toggle('go-inside');
+}

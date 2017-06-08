@@ -1,7 +1,14 @@
 .gallery {
-    display: block;
+    position: absolute;
     border: 2px solid var(--main-color);
     z-index: 1;
+    transition: transform 2s;
+    text-align: center;
+}
+
+.search-box {
+    padding-top: em(30px);
+    padding-bottom: em(30px);
 }
 
 .search-input {
@@ -12,9 +19,6 @@
 
 .tags-display-button {
     z-index: 1;
-}
-
-.responsive-gallery {
 }
 
 .tags-display {
@@ -43,4 +47,8 @@
             }
         }
     }
+}
+
+.loadmore {
+    margin-top: em(40px);   
 }

@@ -17,3 +17,15 @@
 .unseen {
   visibility: hidden;
 }
+
+.outside {
+  transform: translateX(-100%);
+}
+
+.go-inside {
+  animation: out-to-in 1s ease-in forwards;
+}
+
+.go-outside {
+  animation: in-to-out 1s ease-in forwards;
+}
