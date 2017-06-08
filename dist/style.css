@@ -670,28 +670,52 @@ fieldset {
   left: 10vw;
   border: 1px solid white; }
 
-.meme-toolbox input.tool-box-txt {
-  width: 100%;
-  border-radius: 4px;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  height: 30px;
-  padding-left: 7px; }
+.meme-toolbox {
+  background-color: var(--main-color);
+  padding-top: 8px;
+  padding-bottom: 8px; }
+  .meme-toolbox input.tool-box-txt {
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    height: 30px;
+    padding-left: 7px;
+    background-color: lightgray;
+    border: none;
+    outline: none; }
+  .meme-toolbox button.btn-edit {
+    border: none;
+    border-radius: 4px;
+    margin: 2px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    transition: color 0.3s; }
+    .meme-toolbox button.btn-edit:hover {
+      color: green;
+      border: 1px solid gray; }
 
-.meme-toolbox button {
+.btn-return > button {
+  width: 50%;
+  padding: 15px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  font-weight: 900;
+  background-color: var(--about-bg);
   border: none;
-  border-radius: 4px;
-  margin: 2px;
-  height: 30px;
-  width: 30px;
+  color: var(--main-color);
+  font-family: lato;
   cursor: pointer;
   transition: color 0.3s; }
-  .meme-toolbox button:hover {
-    color: green;
-    border: 1px solid gray; }
+  .btn-return > button:hover {
+    color: white;
+    outline-color: 1px solid gray; }
 
 .canvas-box {
-  position: relative; }
+  position: relative;
+  background-color: var(--main-color); }
 
 .meme-canvas-div {
   z-index: 1; }
