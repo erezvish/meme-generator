@@ -65,6 +65,7 @@ function initEditor() {
 function renderEditor(textsNum) { //TODO: function can take number of txts from gstate.txts.length
     var strHTML = `<form>
     <div> 
+    <div class="btn-return flex justify-center"> <button class="return-button" type="button" onclick="toggleGalleryEditor()">Return to <br> meme gallery</button> </div>;
     <div class="btn-return flex justify-center"> <button class="return-button" type="button" onclick="toggleGalleryEditor()">Return to <br> meme gallery</button> </div>`;
     for (var i = 0; i < textsNum; i++) {
         strHTML += '<div>' + getToolBoxHTML(i) + '</div>';

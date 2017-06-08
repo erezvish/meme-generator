@@ -187,5 +187,8 @@ function loadBtnClicked() {
 }
 
 function saveBtnClicked() {
-    // var savedMeme = ca
+    var elCanvas = document.querySelector('.meme-canvas');
+    console.log(elCanvas);
+    var savedMeme = elCanvas.canvas.toDataURL();
+    console.log('Your meme is:', savedMeme);
 }

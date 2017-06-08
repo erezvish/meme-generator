@@ -1,0 +1,11 @@
+@keyframes out-to-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes in-to-out {
+    100%{
+        transform: translateX(-100%);
+    }
+}
