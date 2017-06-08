@@ -65,7 +65,7 @@ function initEditor() {
 function renderEditor(textsNum) { //TODO: function can take number of txts from gstate.txts.length
     var strHTML = `<form>
     <div> 
-    <div class="bttn-return"> <button type="button" class="rtrn-btn">Return to image selection</button> </div>`;
+    <div class="btn-return flex justify-center"> <button type="button">Return to <br> meme gallery</button> </div>`;
     for (var i = 0; i < textsNum; i++) {
         strHTML += '<div>' + getToolBoxHTML(i) + '</div>';
     }
@@ -77,7 +77,7 @@ function getToolBoxHTML(id) {
     var inputHTML = ` <div> <input type="text" id="txt${id}" class="tool-box-txt" onkeyup="textInserted(this)" placeholder="Input your text"> </div>
                     <div class="tool-buttons">`;
     var bttnsHTML = gEditorBttns.map(function (gBttn, ) {
-        return `<button type="button" 
+        return `<button type="button" class="btn-edit"
         onclick="${gBttn.onclick}" data-special="${gBttn.dataAttribute}" data-txt-num="${id}">${gBttn.glyph}</button>`;
     });
     return `${inputHTML} ${bttnsHTML.join('')} </div>`;
