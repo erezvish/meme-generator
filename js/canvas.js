@@ -9,9 +9,31 @@ function renderCanvas() {
     img.src = gImgs[gState.selectedImgId].url;
         context.drawImage(img, 0, 0, canvas.width, canvas.height);
     gState.txts.forEach(function (txt, idx) { //TODO: use all other txts properties
-        context.font = txt.fontCurrSize + 'px';
-        context.strokeText(txt.txt, 0, 30 * (idx + 1), canvas.width);
+        context.font =text.fontCurrFamily + txt.fontCurrSize + 'px';
+        context.strokeStyle = txt.fontColor;
+  
+        context.strokeText(txt.txt,10, 150 * idx + 20 , canvas.width);
     });
 }
 
 
+/*
+
+fontColor:"White"****
+fontCurrFamily:undefined
+fontCurrSize:14 ******
+isBorder:true
+txt:""
+txtAlign
+
+function drawStroked(text, x, y) {
+    ctx.font = "80px Sans-serif"
+
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 8;
+    ctx.strokeText(text, x, y);
+    ctx.fillStyle = 'white';
+
+    ctx.fillText(text, x, y);
+}
+*/
