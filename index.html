@@ -13,7 +13,7 @@
     <header>
       <nav class="navbar">
         <div class="nav-container flex justify-center">
-          <div class="logo">LOGO!</div>
+          <!--<div class="logo">LOGO!</div>-->
           <!--TODO: Fix location of logo-->
           <ul class="clean-list">
             <li class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></li>
@@ -32,13 +32,13 @@
     </header>
 
     <section class="gallery">
-      <div class="search-box flex">
+      <div class="search-box center">
+        <button class="tags-display-button">Tag Search</button>
         <input type="text" class="search-input flex-1" onkeyup="searchActivated()" name="search-input" placeholder="Enter Keyword">
       </div>
       <div class="responsive-gallery flex">
-        <div class="tags-display">Tag Search</div>
-        <div class="img-display"> Gallery
-          <ul class="thumbnails clean-list flex flex-wrap align-center">
+        <div class="img-display">
+          <ul class="thumbnails clean-list flex flex-wrap align-center justify-center">
             <li class="flex"><img>
               <p> </p>
             </li>
@@ -76,16 +76,26 @@
     </section>
 
     <section class="about flex flex-col align-center">
-      <div class="profile-picture"> <img src=""> </div>
+      <div class="hexagon dev1">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+      </div>
       <div class="profile-description flex flex-col align-center">
         <h1>Avital</h1>
         <h3>Aspiring Web Developer</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusantium repellat soluta dignissimos mollitia error voluptates fuga, ex ratione fugit non deserunt, amet quas ipsum dolore magni itaque repudiandae distinctio.</p> </div>
-      <div class="profile-picture"> <img src="assets/imgs/profileImgs/erez.jpg"> </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusantium repellat soluta dignissimos mollitia
+            error voluptates fuga, ex ratione fugit non deserunt, amet quas ipsum dolore magni itaque repudiandae distinctio.</p>
+      </div>
+      <div class="hexagon dev2">
+        <div class="hexTop"></div>
+        <div class="hexBottom"></div>
+      </div>
       <div class="profile-description flex flex-col align-center">
         <h1>Erez Vishnia</h1>
         <h3>Aspiring Web Developer</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusantium repellat soluta dignissimos mollitia error voluptates fuga, ex ratione fugit non deserunt, amet quas ipsum dolore magni itaque repudiandae distinctio.</p> </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusantium repellat soluta dignissimos mollitia
+            error voluptates fuga, ex ratione fugit non deserunt, amet quas ipsum dolore magni itaque repudiandae distinctio.</p>
+      </div>
     </section>
     <section class="contact">CONTACT!</section>
 
